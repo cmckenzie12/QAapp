@@ -1,0 +1,26 @@
+
+<p><a href="#/dashboard">Home</a>  | <a href="#/new_question">Add a Question</a></p>
+<div class="row main">
+	<h1>New Question</h1>
+	<form class="form-horizontal" role="form" name="questionForm">
+
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Question:</label>
+			<input type="text" name="question" class="col-sm-4" ng-model="newQuestion.question" ng-minlength="10" required>
+				<div ng-messages="questionForm.question.$error" style="color:maroon" role="alert" ng-show= 'questionForm.question.$dirty'>
+				    <div ng-message="required">You did not enter a field</div>
+				    <div ng-message="minlength">Your field is too short</div>
+				</div>
+
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Description (optional):</label>
+			<textarea class="col-sm-4" rows="4" ng-model="newQuestion.description" name="description"></textarea>
+		</div>
+		<div class="form-group">
+			<button class="btn btn-success col-md-1 col-md-offset-5" ng-click="createQuestion(newQuestion, user)">Submit</button>
+		</div>
+	</form>
+
+
+</div>

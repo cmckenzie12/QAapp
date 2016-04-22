@@ -1,0 +1,19 @@
+<p><a href="#/dashboard">Home</a>  | <a href="#/new_question">Add a Question</a></p>
+<h1><span ng-bind="question.question"></span></h1>
+<h3><span ng-bind="question.description"></span></h3>
+<div class="row main">
+	<div class="col-xl-12">
+		<table class="table table-striped table-hover">
+			<tbody>
+				<tr ng-repeat='answer in question.answers track by $index'>
+					<td ng-bind="answer.name"></td>
+					<td ng-bind="answer.answer"></td>
+					<td ng-bind="answer.detail"></td>
+					<td ng-bind="answer.likes"></td>
+					<td><button ng-click='like($index)'>Like</button></td>
+				</tr>
+
+			</tbody>
+		</table>
+	</div>
+</div>
